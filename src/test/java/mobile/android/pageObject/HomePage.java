@@ -9,8 +9,7 @@ public class HomePage {
 
   public static String newProject;
 
-  By btnHamburger =
-      By.xpath("//android.widget.ImageButton[@content-desc='Change the current view']");
+  By btnHamburger = By.xpath("//android.widget.ImageButton[@content-desc='Menu']");
   By btnNewProject = By.xpath("(//android.widget.ImageButton[@content-desc='Add'])[1]");
   By txtProjectName = By.xpath("//android.widget.EditText[@text='Name']");
   By btnSubmitNewProject = By.xpath("//android.widget.TextView[@content-desc='Done']");

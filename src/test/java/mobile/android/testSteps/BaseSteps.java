@@ -20,7 +20,7 @@ public class BaseSteps {
     try {
       DesiredCapabilities caps = new DesiredCapabilities();
       caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UIAutomator2");
-      caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "12.0");
+      caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "10.0");
       caps.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
       caps.setCapability(MobileCapabilityType.UDID, "emulator-5554");
       caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 60);
@@ -31,7 +31,7 @@ public class BaseSteps {
 
       URL url = new URL("http://127.0.0.1:4723/wd/hub");
 
-//      driver = new AppiumDriver<MobileElement>(url, caps);
+      driver = new AppiumDriver<MobileElement>(url, caps);
       driver = new AndroidDriver<MobileElement>(url, caps);
       driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
