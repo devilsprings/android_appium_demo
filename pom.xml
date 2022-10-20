@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>Assignment_setel</artifactId>
+    <artifactId>mobile_automation_sample</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
