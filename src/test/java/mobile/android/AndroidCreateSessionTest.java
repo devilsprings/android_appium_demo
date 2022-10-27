@@ -18,10 +18,11 @@ public class AndroidCreateSessionTest extends BaseTest {
         File appDir = new File(classpathRoot, "../apps");
         File app = new File(appDir.getCanonicalPath(), "ApiDemos-debug.apk");
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("deviceName", "Android Emulator");
-        capabilities.setCapability("app", app.getAbsolutePath());
+        capabilities.setCapability("deviceName", "emulator-5554");
+//        capabilities.setCapability("app", app.getAbsolutePath());
         capabilities.setCapability("appPackage", "io.appium.android.apis");
         capabilities.setCapability("appActivity", ".ApiDemos");
+        capabilities.setCapability("noReset", true);
         driver = new AndroidDriver<WebElement>(getServiceUrl(), capabilities);
     }
 

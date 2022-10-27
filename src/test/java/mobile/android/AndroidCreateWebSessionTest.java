@@ -1,6 +1,8 @@
 package mobile.android;
 
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.service.local.AppiumDriverLocalService;
+import io.appium.java_client.service.local.AppiumServiceBuilder;
 import mobile.base.BaseTest;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -16,9 +18,11 @@ public class AndroidCreateWebSessionTest extends BaseTest {
     @BeforeClass
     public void setUp() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("deviceName", "Android Emulator");
+        capabilities.setCapability("deviceName", "emulator-5554");
         capabilities.setCapability("browserName", "Chrome");
         driver = new AndroidDriver<WebElement>(getServiceUrl(), capabilities);
+        AppiumDriverLocalService service = AppiumDriverLocalService.buildService(new AppiumServiceBuilder().usingAnyFreePort().withArgument(() -> "--allow-insecure","chromedriver_autodownload"));
+
     }
 
     @AfterClass
